@@ -1,0 +1,18 @@
+*.class
+
+# virtual machine crash logs
+hs_err_pid*
+
+# intelliJ
+/.idea
+*.iml
+
+# maven target dir
+target
+
+# build artefacts
+dependency-reduced-pom.xml
+
+# local development ignores
+/bin
+
