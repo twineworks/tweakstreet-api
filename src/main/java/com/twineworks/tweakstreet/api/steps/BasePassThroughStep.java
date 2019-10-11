@@ -1,6 +1,7 @@
 package com.twineworks.tweakstreet.api.steps;
 
 import com.twineworks.tweakflow.lang.values.ValueProvider;
+import com.twineworks.tweakstreet.api.steps.hub.Hub;
 import com.twineworks.tweakstreet.api.steps.results.ResultDesc;
 import com.twineworks.tweakstreet.api.steps.settings.SettingDesc;
 import org.slf4j.Logger;
@@ -13,6 +14,12 @@ import java.util.Set;
 public abstract class BasePassThroughStep implements PassThroughStep {
 
   protected Logger log;
+  protected Hub hub;
+
+  @Override
+  public void setHub(Hub hub) {
+    this.hub = hub;
+  }
 
   @Override
   public void setLogger(Logger log) {
