@@ -25,6 +25,7 @@ public interface PassThroughStep {
 
   void initProcessing();
   void processRow(Value row);
+
   void shutdown();
 
 }
