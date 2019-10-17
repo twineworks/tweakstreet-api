@@ -1,4 +1,4 @@
-package com.twineworks.tweakstreet.api.steps.fields;
+package com.twineworks.tweakstreet.api.desc.fields;
 
 import com.twineworks.tweakflow.lang.types.Type;
 

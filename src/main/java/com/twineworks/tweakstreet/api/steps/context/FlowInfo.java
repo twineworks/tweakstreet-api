@@ -1,4 +1,4 @@
-package com.twineworks.tweakstreet.api.steps.hub;
+package com.twineworks.tweakstreet.api.steps.context;
 
 public interface FlowInfo {
   String getFlowPath();

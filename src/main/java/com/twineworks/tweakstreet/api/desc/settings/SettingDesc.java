@@ -1,4 +1,4 @@
-package com.twineworks.tweakstreet.api.steps.settings;
+package com.twineworks.tweakstreet.api.desc.settings;
 
 public final class SettingDesc {
 

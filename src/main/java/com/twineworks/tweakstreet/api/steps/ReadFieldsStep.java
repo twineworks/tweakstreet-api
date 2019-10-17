@@ -2,10 +2,10 @@ package com.twineworks.tweakstreet.api.steps;
 
 import com.twineworks.tweakflow.lang.values.Value;
 import com.twineworks.tweakflow.lang.values.ValueProvider;
-import com.twineworks.tweakstreet.api.steps.hub.Hub;
-import com.twineworks.tweakstreet.api.steps.mappings.MappingDesc;
-import com.twineworks.tweakstreet.api.steps.results.ResultDesc;
-import com.twineworks.tweakstreet.api.steps.settings.SettingDesc;
+import com.twineworks.tweakstreet.api.steps.context.StepContext;
+import com.twineworks.tweakstreet.api.desc.mappings.Mapping;
+import com.twineworks.tweakstreet.api.desc.results.ResultDesc;
+import com.twineworks.tweakstreet.api.desc.settings.SettingDesc;
 import org.slf4j.Logger;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.Set;
 public interface ReadFieldsStep {
 
   void setLogger(Logger log);
-  void setHub(Hub hub);
+  void setContext(StepContext context);
 
   List<ResultDesc> getDeclaredResults();
   List<SettingDesc> getDeclaredSettings();
@@ -26,7 +26,7 @@ public interface ReadFieldsStep {
 
   void initProcessing();
 
-  void open(List<MappingDesc> mappings);
+  void open(List<Mapping> mappings);
   boolean readNextRow();
   void getRowFields(Value[] fields);
 

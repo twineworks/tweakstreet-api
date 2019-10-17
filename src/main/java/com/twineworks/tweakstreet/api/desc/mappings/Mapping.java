@@ -1,12 +1,12 @@
-package com.twineworks.tweakstreet.api.steps.mappings;
+package com.twineworks.tweakstreet.api.desc.mappings;
 
 import com.twineworks.tweakflow.lang.values.Value;
 
-public final class MappingDesc {
+public final class Mapping {
   public final String name;
   public final Value mapping;
 
-  public MappingDesc(String name, Value mapping) {
+  public Mapping(String name, Value mapping) {
     this.name = name;
     this.mapping = mapping;
   }

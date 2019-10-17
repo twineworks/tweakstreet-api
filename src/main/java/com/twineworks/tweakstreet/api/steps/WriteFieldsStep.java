@@ -2,10 +2,10 @@ package com.twineworks.tweakstreet.api.steps;
 
 import com.twineworks.tweakflow.lang.values.Value;
 import com.twineworks.tweakflow.lang.values.ValueProvider;
-import com.twineworks.tweakstreet.api.steps.fields.FieldDesc;
-import com.twineworks.tweakstreet.api.steps.hub.Hub;
-import com.twineworks.tweakstreet.api.steps.results.ResultDesc;
-import com.twineworks.tweakstreet.api.steps.settings.SettingDesc;
+import com.twineworks.tweakstreet.api.desc.fields.FieldDesc;
+import com.twineworks.tweakstreet.api.steps.context.StepContext;
+import com.twineworks.tweakstreet.api.desc.results.ResultDesc;
+import com.twineworks.tweakstreet.api.desc.settings.SettingDesc;
 import org.slf4j.Logger;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.Set;
 public interface WriteFieldsStep {
 
   void setLogger(Logger log);
-  void setHub(Hub hub);
+  void setContext(StepContext stepContext);
   void setWriteFields(List<FieldDesc> fields);
 
   List<ResultDesc> getDeclaredResults();

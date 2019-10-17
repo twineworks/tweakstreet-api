@@ -1,10 +1,10 @@
 package com.twineworks.tweakstreet.api.encryption;
 
-public final class OptionalEncryption {
+public final class Encryption {
 
   private final PasswordCrypto passwordCrypto;
 
-  public OptionalEncryption(PasswordCrypto passwordCrypto) {
+  public Encryption(PasswordCrypto passwordCrypto) {
     this.passwordCrypto = passwordCrypto;
   }
 

@@ -1,4 +1,4 @@
-package com.twineworks.tweakstreet.api.steps.results;
+package com.twineworks.tweakstreet.api.desc.results;
 
 import com.twineworks.tweakflow.lang.types.Type;
 
