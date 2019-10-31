@@ -60,22 +60,22 @@ public final class ListSetting implements ValueProvider {
     lastRetSet = false;
 
     value = valueProvider.getValue();
-    ListValue num;
+    ListValue lv;
     if (nullable){
-      num = Utils.asList(name, value);
-      if (num == null){
+      lv = Utils.asList(name, value);
+      if (lv == null){
         lastRet = null;
         lastRetSet = true;
         return null;
       }
     }
     else {
-      num = Utils.asNNList(name, value);
+      lv = Utils.asNNList(name, value);
     }
 
-    lastRet = num;
+    lastRet = lv;
     lastRetSet = true;
-    return num;
+    return lv;
 
   }
 

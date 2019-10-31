@@ -59,22 +59,22 @@ public final class StringSetting implements ValueProvider {
     lastRetSet = false;
 
     value = valueProvider.getValue();
-    String num;
+    String str;
     if (nullable){
-      num = Utils.asString(name, value);
-      if (num == null){
+      str = Utils.asString(name, value);
+      if (str == null){
         lastRet = null;
         lastRetSet = true;
         return null;
       }
     }
     else {
-      num = Utils.asNNString(name, value);
+      str = Utils.asNNString(name, value);
     }
 
-    lastRet = num;
+    lastRet = str;
     lastRetSet = true;
-    return num;
+    return str;
 
   }
 

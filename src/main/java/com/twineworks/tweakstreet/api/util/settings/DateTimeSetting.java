@@ -1,11 +1,12 @@
 package com.twineworks.tweakstreet.api.util.settings;
 
+import com.twineworks.tweakflow.lang.values.DateTimeValue;
 import com.twineworks.tweakflow.lang.values.Value;
 import com.twineworks.tweakflow.lang.values.ValueProvider;
 
 import java.util.Map;
 
-public final class BinarySetting implements ValueProvider {
+public final class DateTimeSetting implements ValueProvider {
 
   public final static class Builder {
 
@@ -32,8 +33,8 @@ public final class BinarySetting implements ValueProvider {
       return this;
     }
 
-    public BinarySetting build(){
-      return new BinarySetting(name, valueProvider, nullable);
+    public DateTimeSetting build(){
+      return new DateTimeSetting(name, valueProvider, nullable);
     }
 
   }
@@ -44,37 +45,37 @@ public final class BinarySetting implements ValueProvider {
 
   private Value value;
   private boolean lastRetSet = false;
-  private byte[] lastRet;
+  private DateTimeValue lastRet;
 
-  private BinarySetting(String name, ValueProvider valueProvider, boolean nullable) {
+  private DateTimeSetting(String name, ValueProvider valueProvider, boolean nullable) {
     this.valueProvider = valueProvider;
     this.nullable = nullable;
     this.name = name;
   }
 
-  public byte[] get(){
+  public DateTimeValue get(){
 
     if (!hasChanged()) return lastRet;
 
     lastRetSet = false;
 
     value = valueProvider.getValue();
-    byte[] bin;
+    DateTimeValue d;
     if (nullable){
-      bin = Utils.asBytes(name, value);
-      if (bin == null){
+      d = Utils.asDatetime(name, value);
+      if (d == null){
         lastRet = null;
         lastRetSet = true;
         return null;
       }
     }
     else {
-      bin = Utils.asNNBytes(name, value);
+      d = Utils.asNNDatetime(name, value);
     }
 
-    lastRet = bin;
+    lastRet = d;
     lastRetSet = true;
-    return bin;
+    return d;
 
   }
 

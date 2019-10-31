@@ -60,22 +60,22 @@ public final class DictSetting implements ValueProvider {
     lastRetSet = false;
 
     value = valueProvider.getValue();
-    DictValue num;
+    DictValue d;
     if (nullable){
-      num = Utils.asDict(name, value);
-      if (num == null){
+      d = Utils.asDict(name, value);
+      if (d == null){
         lastRet = null;
         lastRetSet = true;
         return null;
       }
     }
     else {
-      num = Utils.asNNDict(name, value);
+      d = Utils.asNNDict(name, value);
     }
 
-    lastRet = num;
+    lastRet = d;
     lastRetSet = true;
-    return num;
+    return d;
 
   }
 

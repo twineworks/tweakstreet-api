@@ -5,7 +5,7 @@ import com.twineworks.tweakflow.lang.values.ValueProvider;
 
 import java.util.Map;
 
-public final class BinarySetting implements ValueProvider {
+public final class IntSetting implements ValueProvider {
 
   public final static class Builder {
 
@@ -32,8 +32,8 @@ public final class BinarySetting implements ValueProvider {
       return this;
     }
 
-    public BinarySetting build(){
-      return new BinarySetting(name, valueProvider, nullable);
+    public IntSetting build(){
+      return new IntSetting(name, valueProvider, nullable);
     }
 
   }
@@ -44,37 +44,37 @@ public final class BinarySetting implements ValueProvider {
 
   private Value value;
   private boolean lastRetSet = false;
-  private byte[] lastRet;
+  private Integer lastRet;
 
-  private BinarySetting(String name, ValueProvider valueProvider, boolean nullable) {
+  private IntSetting(String name, ValueProvider valueProvider, boolean nullable) {
     this.valueProvider = valueProvider;
     this.nullable = nullable;
     this.name = name;
   }
 
-  public byte[] get(){
+  public Integer get(){
 
     if (!hasChanged()) return lastRet;
 
     lastRetSet = false;
 
     value = valueProvider.getValue();
-    byte[] bin;
+    Integer num;
     if (nullable){
-      bin = Utils.asBytes(name, value);
-      if (bin == null){
+      num = Utils.asInteger(name, value);
+      if (num == null){
         lastRet = null;
         lastRetSet = true;
         return null;
       }
     }
     else {
-      bin = Utils.asNNBytes(name, value);
+      num = Utils.asNNInteger(name, value);
     }
 
-    lastRet = bin;
+    lastRet = num;
     lastRetSet = true;
-    return bin;
+    return num;
 
   }
 
