@@ -6,7 +6,7 @@
 
     <groupId>com.twineworks</groupId>
     <artifactId>tweakstreet-api</artifactId>
-    <version>0.0.39-SNAPSHOT</version>
+    <version>0.0.39</version>
     <packaging>jar</packaging>
 
     <properties>
