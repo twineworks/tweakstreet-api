@@ -15,6 +15,10 @@ public final class Encryption {
     } else {
       return str;
     }
+  }
 
+  public String encrypt(String str){
+    if (str == null) return null;
+    return EncryptionConstants.PREFIX + passwordCrypto.encrypt(str);
   }
 }
