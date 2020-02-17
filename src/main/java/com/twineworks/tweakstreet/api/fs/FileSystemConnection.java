@@ -3,16 +3,14 @@ package com.twineworks.tweakstreet.api.fs;
 import com.twineworks.tweakstreet.api.fs.traversal.StorageMatcher;
 import com.twineworks.tweakstreet.api.fs.traversal.StorageVisitor;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.LinkOption;
 import java.util.List;
 
 public interface FileSystemConnection extends AutoCloseable {
   InputStream newInputStream(String path, int bufferSize) throws IOException;
+  BufferedReader newBufferedReader(String path, Charset charset, int bufferSize) throws IOException;
   BufferedWriter newBufferedWriter(String path, Charset charset, int bufferSize, WriteOpenExistingOption ifExists) throws IOException;
   OutputStream newOutputStream(String path, int bufferSize, WriteOpenExistingOption ifExists) throws IOException;
   boolean isRegularFile(String path, LinkOption... options) throws IOException;
