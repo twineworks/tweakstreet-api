@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public interface ReadFieldsStep {
+public interface ReadFieldsStep extends DataFlowLoopOk {
 
   void setLogger(Logger log);
   void setContext(StepContext context);

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public interface PassThroughStep {
+public interface PassThroughStep extends DataFlowLoopOk {
 
   void setLogger(Logger log);
   void setContext(StepContext context);
