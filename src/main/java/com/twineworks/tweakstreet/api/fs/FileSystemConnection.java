@@ -22,6 +22,7 @@ public interface FileSystemConnection extends AutoCloseable {
   StorageFileInfo fileInfo(String path) throws IOException;
   String resolve(String base, String name) throws IOException;
   List<StorageFileInfo> getChildren(String path) throws IOException;
+  void mkParentFor(String path) throws IOException;
   void mkDir(String path) throws IOException;
   void rmTree(String path) throws IOException;
   String textContent(String path, Charset charset) throws IOException;
