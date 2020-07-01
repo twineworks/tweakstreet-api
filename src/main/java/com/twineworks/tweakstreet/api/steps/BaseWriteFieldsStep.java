@@ -34,28 +34,11 @@ public abstract class BaseWriteFieldsStep implements WriteFieldsStep {
   }
 
   @Override
-  public List<ResultDesc> getDeclaredResults() {
-    return Collections.emptyList();
-  }
-
-  @Override
-  public List<SettingDesc> getDeclaredSettings() {
-    return Collections.emptyList();
-  }
-
-  @Override
-  public List<SettingDesc> getDeclaredStaticSettings() {
-    return Collections.emptyList();
-  }
-
-  @Override
   public void setSettingProviders(Map<String, ValueProvider> settings) {
-
   }
 
   @Override
   public void setStaticSettingProviders(Map<String, ValueProvider> settings) {
-
   }
 
   @Override

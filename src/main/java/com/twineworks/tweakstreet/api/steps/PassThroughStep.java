@@ -16,9 +16,6 @@ public interface PassThroughStep extends DataFlowLoopOk {
   void setLogger(Logger log);
   void setContext(StepContext context);
 
-  List<ResultDesc> getDeclaredResults();
-  List<SettingDesc> getDeclaredSettings();
-  List<SettingDesc> getDeclaredStaticSettings();
   void setSettingProviders(Map<String, ValueProvider> settings);
   void setStaticSettingProviders(Map<String, ValueProvider> settings);
   Map<String, ValueProvider> getResultProviders(Set<String> names);

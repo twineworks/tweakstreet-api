@@ -18,9 +18,6 @@ public interface WriteFieldsStep extends DataFlowLoopOk {
   void setContext(StepContext stepContext);
   void setWriteFields(List<FieldDesc> fields);
 
-  List<ResultDesc> getDeclaredResults();
-  List<SettingDesc> getDeclaredSettings();
-  List<SettingDesc> getDeclaredStaticSettings();
   void setSettingProviders(Map<String, ValueProvider> settings);
   void setStaticSettingProviders(Map<String, ValueProvider> settings);
   Map<String, ValueProvider> getResultProviders(Set<String> names);

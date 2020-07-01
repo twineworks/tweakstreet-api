@@ -27,21 +27,6 @@ public abstract class BaseReadFieldsStep implements ReadFieldsStep {
   }
 
   @Override
-  public List<ResultDesc> getDeclaredResults() {
-    return Collections.emptyList();
-  }
-
-  @Override
-  public List<SettingDesc> getDeclaredSettings() {
-    return Collections.emptyList();
-  }
-
-  @Override
-  public List<SettingDesc> getDeclaredStaticSettings() {
-    return Collections.emptyList();
-  }
-
-  @Override
   public void setSettingProviders(Map<String, ValueProvider> settings) {
 
   }
