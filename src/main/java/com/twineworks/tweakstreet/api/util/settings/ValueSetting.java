@@ -47,7 +47,7 @@ public final class ValueSetting implements ValueProvider {
   }
 
   public boolean hasChanged(){
-    return (valueProvider.getValue() != value);
+    return (!valueProvider.getValue().equals(value));
   }
 
   @Override

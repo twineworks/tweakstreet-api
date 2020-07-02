@@ -80,7 +80,7 @@ public final class ListSetting implements ValueProvider {
   }
 
   public boolean hasChanged(){
-    return !lastRetSet || (valueProvider.getValue() != value);
+    return !lastRetSet || (!valueProvider.getValue().equals(value));
   }
 
   @Override

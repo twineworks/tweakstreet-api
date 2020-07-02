@@ -91,7 +91,7 @@ public final class EnumSetting<T extends Enum<T>> implements ValueProvider {
   }
 
   public boolean hasChanged(){
-    return !lastRetSet || (valueProvider.getValue() != value);
+    return !lastRetSet || (!valueProvider.getValue().equals(value));
   }
 
   @Override
