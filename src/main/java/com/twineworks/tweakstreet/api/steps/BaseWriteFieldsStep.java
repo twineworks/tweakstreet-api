@@ -51,6 +51,10 @@ public abstract class BaseWriteFieldsStep implements WriteFieldsStep {
   }
 
   @Override
+  public void finishProcessing() {
+  }
+
+  @Override
   public void shutdown() {
   }
 

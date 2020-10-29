@@ -24,6 +24,7 @@ public interface WriteFieldsStep extends DataFlowLoopOk {
 
   void initProcessing();
   void processRow(Value[] fieldValues);
+  void finishProcessing();
 
   void shutdown();
 

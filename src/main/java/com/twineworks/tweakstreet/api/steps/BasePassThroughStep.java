@@ -46,6 +46,10 @@ public abstract class BasePassThroughStep implements PassThroughStep {
   }
 
   @Override
+  public void finishProcessing() {
+  }
+
+  @Override
   public void shutdown() {
   }
 

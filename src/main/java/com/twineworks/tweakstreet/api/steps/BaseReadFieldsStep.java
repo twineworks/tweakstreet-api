@@ -46,7 +46,12 @@ public abstract class BaseReadFieldsStep implements ReadFieldsStep {
   }
 
   @Override
+  public void finishProcessing() {
+  }
+
+  @Override
   public void shutdown() {
+    finishProcessing();
   }
 
 }

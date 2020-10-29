@@ -27,6 +27,8 @@ public interface ReadFieldsStep extends DataFlowLoopOk {
   boolean readNextRow();
   void getRowFields(Value[] fields);
 
+  void finishProcessing();
+
   void shutdown();
 
 }

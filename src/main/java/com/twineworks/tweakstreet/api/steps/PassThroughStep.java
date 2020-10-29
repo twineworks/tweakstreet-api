@@ -22,6 +22,7 @@ public interface PassThroughStep extends DataFlowLoopOk {
 
   void initProcessing();
   void processRow(Value row);
+  void finishProcessing();
 
   void shutdown();
 
