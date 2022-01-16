@@ -13,6 +13,7 @@ public final class EnumSetting<T extends Enum<T>> implements ValueProvider {
     private ValueProvider valueProvider;
     private Class<T> tEnum;
     private boolean nullable = false;
+    private T defaultIfNull = null;
 
     public Builder(String name){
       this.name = name;
@@ -38,8 +39,16 @@ public final class EnumSetting<T extends Enum<T>> implements ValueProvider {
       return this;
     }
 
+    public Builder<T> defaultIfNull(T defaultIfNull){
+      this.defaultIfNull = defaultIfNull;
+      return this;
+    }
+
     public EnumSetting<T> build(){
-      return new EnumSetting<>(name, valueProvider, tEnum, nullable);
+      if (!nullable && defaultIfNull != null){
+        throw new AssertionError("defaultIfNull has been supplied, nullable must be true in this case");
+      }
+      return new EnumSetting<>(name, valueProvider, tEnum, nullable, defaultIfNull);
     }
 
   }
@@ -50,14 +59,16 @@ public final class EnumSetting<T extends Enum<T>> implements ValueProvider {
 
   private Value value;
   private boolean lastRetSet = false;
-  private Class<T> tEnum;
+  private final Class<T> tEnum;
   private T lastRet;
+  private final T defaultIfNull;
 
-  private EnumSetting(String name, ValueProvider valueProvider, Class<T> tEnum, boolean nullable) {
+  private EnumSetting(String name, ValueProvider valueProvider, Class<T> tEnum, boolean nullable, T defaultIfNull) {
     this.valueProvider = valueProvider;
     this.name = name;
     this.tEnum = tEnum;
     this.nullable = nullable;
+    this.defaultIfNull = defaultIfNull;
   }
 
   public T get(){
@@ -73,9 +84,9 @@ public final class EnumSetting<T extends Enum<T>> implements ValueProvider {
     if (nullable){
       enumName = Utils.asString(name, value);
       if (enumName == null){
-        lastRet = null;
+        lastRet = defaultIfNull;
         lastRetSet = true;
-        return null;
+        return defaultIfNull;
       }
     }
     else{
